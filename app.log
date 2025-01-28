@@ -1,0 +1,99 @@
+2025-01-28 16:08:01,588 - invoice_extraction_bot - INFO - Initialized Groq model.
+2025-01-28 16:12:36,142 - invoice_extraction_bot - INFO - Initialized Groq model.
+2025-01-28 16:12:42,298 - invoice_extraction_bot - INFO - Invoice Extraction Bot started.
+2025-01-28 16:13:45,916 - invoice_extraction_bot - INFO - Invoice Extraction Bot started.
+2025-01-28 16:13:49,987 - invoice_extraction_bot - INFO - Invoice Extraction Bot started.
+2025-01-28 16:13:49,997 - invoice_extraction_bot - INFO - Processing PDF file: invoice_1_page-0001.pdf
+2025-01-28 16:13:50,011 - invoice_extraction_bot - INFO - Processing file: invoice_1_page-0001.pdf
+2025-01-28 16:13:50,012 - invoice_extraction_bot - INFO - Starting PDF text extraction.
+2025-01-28 16:13:50,015 - invoice_extraction_bot - INFO - Falling back to OCR for scanned PDF.
+2025-01-28 16:13:50,016 - invoice_extraction_bot - ERROR - Error during data extraction: No module named 'pdf2image'
+Traceback (most recent call last):
+  File "C:\Users\arunk\Downloads\GoogleCloud\GCP_Partner\GCP_GenerativeAI\GCPGenAI_Tranings\1_InvioceGenerator_wadia\Invoice_Data_Extraction_LLM-main\app.py", line 109, in main
+    data = create_docs([uploaded_file])  # Expect a DataFrame
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\arunk\Downloads\GoogleCloud\GCP_Partner\GCP_GenerativeAI\GCPGenAI_Tranings\1_InvioceGenerator_wadia\Invoice_Data_Extraction_LLM-main\utils.py", line 105, in create_docs
+    raw_data = get_pdf_text_with_ocr(uploaded_file.read())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\arunk\Downloads\GoogleCloud\GCP_Partner\GCP_GenerativeAI\GCPGenAI_Tranings\1_InvioceGenerator_wadia\Invoice_Data_Extraction_LLM-main\utils.py", line 45, in get_pdf_text_with_ocr
+    pdf_images = convert_pdf_to_images(BytesIO(pdf_doc))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\arunk\Downloads\GoogleCloud\GCP_Partner\GCP_GenerativeAI\GCPGenAI_Tranings\1_InvioceGenerator_wadia\Invoice_Data_Extraction_LLM-main\utils.py", line 54, in convert_pdf_to_images
+    from pdf2image import convert_from_bytes
+ModuleNotFoundError: No module named 'pdf2image'
+2025-01-28 16:17:56,431 - invoice_extraction_bot - INFO - Initialized Groq model.
+2025-01-28 16:18:00,096 - invoice_extraction_bot - INFO - Invoice Extraction Bot started.
+2025-01-28 16:18:17,486 - invoice_extraction_bot - INFO - Invoice Extraction Bot started.
+2025-01-28 16:18:22,614 - invoice_extraction_bot - INFO - Invoice Extraction Bot started.
+2025-01-28 16:18:22,630 - invoice_extraction_bot - INFO - Processing PDF file: invoice_1_page-0001.pdf
+2025-01-28 16:18:22,641 - invoice_extraction_bot - INFO - Processing file: invoice_1_page-0001.pdf
+2025-01-28 16:18:22,643 - invoice_extraction_bot - INFO - Starting PDF text extraction.
+2025-01-28 16:18:22,647 - invoice_extraction_bot - INFO - Falling back to OCR for scanned PDF.
+2025-01-28 16:18:22,714 - invoice_extraction_bot - ERROR - Error during data extraction: a bytes-like object is required, not '_io.BytesIO'
+Traceback (most recent call last):
+  File "C:\Users\arunk\Downloads\GoogleCloud\GCP_Partner\GCP_GenerativeAI\GCPGenAI_Tranings\1_InvioceGenerator_wadia\Invoice_Data_Extraction_LLM-main\app.py", line 109, in main
+    data = create_docs([uploaded_file])  # Expect a DataFrame
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\arunk\Downloads\GoogleCloud\GCP_Partner\GCP_GenerativeAI\GCPGenAI_Tranings\1_InvioceGenerator_wadia\Invoice_Data_Extraction_LLM-main\utils.py", line 105, in create_docs
+    raw_data = get_pdf_text_with_ocr(uploaded_file.read())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\arunk\Downloads\GoogleCloud\GCP_Partner\GCP_GenerativeAI\GCPGenAI_Tranings\1_InvioceGenerator_wadia\Invoice_Data_Extraction_LLM-main\utils.py", line 45, in get_pdf_text_with_ocr
+    pdf_images = convert_pdf_to_images(BytesIO(pdf_doc))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\arunk\Downloads\GoogleCloud\GCP_Partner\GCP_GenerativeAI\GCPGenAI_Tranings\1_InvioceGenerator_wadia\Invoice_Data_Extraction_LLM-main\utils.py", line 55, in convert_pdf_to_images
+    return convert_from_bytes(pdf_bytes)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\arun_\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\pdf2image\pdf2image.py", line 357, in convert_from_bytes
+    f.write(pdf_file)
+TypeError: a bytes-like object is required, not '_io.BytesIO'
+2025-01-28 16:31:55,112 - invoice_extraction_bot - INFO - Invoice Extraction Bot started.
+2025-01-28 16:31:55,126 - invoice_extraction_bot - INFO - Processing PDF file: invoice_1_page-0001.pdf
+2025-01-28 16:31:55,130 - invoice_extraction_bot - INFO - Processing file: invoice_1_page-0001.pdf
+2025-01-28 16:31:55,131 - invoice_extraction_bot - INFO - Starting PDF text extraction.
+2025-01-28 16:31:55,134 - invoice_extraction_bot - INFO - Falling back to OCR for scanned PDF.
+2025-01-28 16:31:55,139 - invoice_extraction_bot - ERROR - Error during data extraction: a bytes-like object is required, not '_io.BytesIO'
+Traceback (most recent call last):
+  File "C:\Users\arunk\Downloads\GoogleCloud\GCP_Partner\GCP_GenerativeAI\GCPGenAI_Tranings\1_InvioceGenerator_wadia\Invoice_Data_Extraction_LLM-main\app.py", line 109, in main
+    data = create_docs([uploaded_file])  # Expect a DataFrame
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\arunk\Downloads\GoogleCloud\GCP_Partner\GCP_GenerativeAI\GCPGenAI_Tranings\1_InvioceGenerator_wadia\Invoice_Data_Extraction_LLM-main\utils.py", line 105, in create_docs
+    raw_data = get_pdf_text_with_ocr(uploaded_file.read())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\arunk\Downloads\GoogleCloud\GCP_Partner\GCP_GenerativeAI\GCPGenAI_Tranings\1_InvioceGenerator_wadia\Invoice_Data_Extraction_LLM-main\utils.py", line 45, in get_pdf_text_with_ocr
+    pdf_images = convert_pdf_to_images(BytesIO(pdf_doc))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\arunk\Downloads\GoogleCloud\GCP_Partner\GCP_GenerativeAI\GCPGenAI_Tranings\1_InvioceGenerator_wadia\Invoice_Data_Extraction_LLM-main\utils.py", line 55, in convert_pdf_to_images
+    return convert_from_bytes(pdf_bytes)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\arun_\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\pdf2image\pdf2image.py", line 357, in convert_from_bytes
+    f.write(pdf_file)
+TypeError: a bytes-like object is required, not '_io.BytesIO'
+2025-01-28 16:36:26,775 - invoice_extraction_bot - INFO - Invoice Extraction Bot started.
+2025-01-28 16:36:26,790 - invoice_extraction_bot - INFO - Processing PDF file: invoice_1_page-0001.pdf
+2025-01-28 16:36:26,793 - invoice_extraction_bot - INFO - Processing file: invoice_1_page-0001.pdf
+2025-01-28 16:36:26,794 - invoice_extraction_bot - INFO - Starting PDF text extraction.
+2025-01-28 16:36:26,797 - invoice_extraction_bot - INFO - Falling back to OCR for scanned PDF.
+2025-01-28 16:36:26,801 - invoice_extraction_bot - ERROR - Error during data extraction: a bytes-like object is required, not '_io.BytesIO'
+Traceback (most recent call last):
+  File "C:\Users\arunk\Downloads\GoogleCloud\GCP_Partner\GCP_GenerativeAI\GCPGenAI_Tranings\1_InvioceGenerator_wadia\Invoice_Data_Extraction_LLM-main\app.py", line 109, in main
+    data = create_docs([uploaded_file])  # Expect a DataFrame
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\arunk\Downloads\GoogleCloud\GCP_Partner\GCP_GenerativeAI\GCPGenAI_Tranings\1_InvioceGenerator_wadia\Invoice_Data_Extraction_LLM-main\utils.py", line 105, in create_docs
+    raw_data = get_pdf_text_with_ocr(uploaded_file.read())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\arunk\Downloads\GoogleCloud\GCP_Partner\GCP_GenerativeAI\GCPGenAI_Tranings\1_InvioceGenerator_wadia\Invoice_Data_Extraction_LLM-main\utils.py", line 45, in get_pdf_text_with_ocr
+    pdf_images = convert_pdf_to_images(BytesIO(pdf_doc))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\arunk\Downloads\GoogleCloud\GCP_Partner\GCP_GenerativeAI\GCPGenAI_Tranings\1_InvioceGenerator_wadia\Invoice_Data_Extraction_LLM-main\utils.py", line 55, in convert_pdf_to_images
+    return convert_from_bytes(pdf_bytes)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\arun_\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\pdf2image\pdf2image.py", line 357, in convert_from_bytes
+    f.write(pdf_file)
+TypeError: a bytes-like object is required, not '_io.BytesIO'
+2025-01-28 16:50:35,540 - invoice_extraction_bot - INFO - Initialized Groq model.
+2025-01-28 16:50:39,509 - invoice_extraction_bot - INFO - Invoice Extraction Bot started.
+2025-01-28 16:50:44,501 - invoice_extraction_bot - INFO - Invoice Extraction Bot started.
+2025-01-28 16:50:46,603 - invoice_extraction_bot - INFO - Invoice Extraction Bot started.
+2025-01-28 16:50:55,378 - invoice_extraction_bot - INFO - Invoice Extraction Bot started.
+2025-01-28 16:50:56,410 - invoice_extraction_bot - INFO - Invoice Extraction Bot started.
+2025-01-28 16:50:56,420 - invoice_extraction_bot - INFO - Processing image file: invoice_1_page-0001.jpg
