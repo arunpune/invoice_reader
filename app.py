@@ -13,25 +13,18 @@ def add_custom_css():
     st.markdown(
         """
         <style>
-        /* Background image */
-        .stApp {
-            background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20230415/pngtree-website-technology-line-dark-background-image_2344719.jpg'); /* Replace with your background image URL */
-            background-size: cover;
-            background-attachment: fixed;
-            background-position: center;
-            color: white;
-        }
+        
 
         /* Center-aligned title and subheader */
         .center-aligned-title {
             text-align: center;
-            color: #ffffff;
+            
             text-shadow: 2px 2px 4px #000000;
         }
 
         .center-aligned-subheader {
             text-align: center;
-            color: #ffffff;
+            
             text-shadow: 1px 1px 3px #000000;
         }
 
@@ -44,12 +37,12 @@ def add_custom_css():
 
         .stFileUploader {
             background-color: rgba(255, 255, 255, 0.8);
-            color: black;
+            
         }
 
         /* Spinner styling */
         .css-1bk0rdt {
-            color: white;
+            
         }
 
         /* Dataframe table styling */
@@ -60,21 +53,55 @@ def add_custom_css():
 
         /* Informational section styling */
         .info-section {
-            background-color: rgba(0, 0, 0, 0.7);
-            color: white;
+            background-color: rgba(white);
+            
             padding: 15px;
             border-radius: 10px;
             margin-top: 20px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
         }
 
         .info-section h3 {
             color: #ffcc00;
         }
+
+        .stButton>button {
+        background-color: #4CAF50; /* Green */
+        color: white;
+        font-size: 16px;
+        padding: 10px 20px;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    .stButton>button:hover {
+        background-color: #45a049;
+    }
+    .stDownloadButton>button {
+        background-color: #008CBA; /* Blue */
+        color: white;
+        font-size: 16px;
+        padding: 10px 20px;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    .stDownloadButton>button:hover {
+        background-color: #007bb5;
+    }
+
+
         </style>
         """,
         unsafe_allow_html=True,
     )
+
+    
+
+    # Custom CSS for buttons
+
 
 
 def main():
