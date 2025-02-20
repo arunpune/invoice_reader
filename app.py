@@ -1,19 +1,46 @@
 import streamlit as st
 from dotenv import load_dotenv
 from logging_config import logger
-from utils import create_docs
-from test import process_image
+from backend import create_docs
 import pandas as pd
 
 # Set the page configuration
 st.set_page_config(page_title="Invoice Extraction Bot", layout="wide")
 
 def add_custom_css():
-    """Add custom CSS for styling, including a background image and center-aligned title."""
+    """Add custom CSS for styling."""
     st.markdown(
         """
         <style>
         
+            .stButton>button {
+        background-color: #4CAF50; /* Green */
+        color: white;
+        font-size: 16px;
+        padding: 10px 20px;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    .stButton>button:hover {
+        background-color: #45a049;
+        color: black; /* Ensure text remains black on hover */
+    }
+    .stDownloadButton>button {
+        background-color: #008CBA; /* Blue */
+        color: white;
+        font-size: 16px;
+        padding: 10px 20px;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    .stDownloadButton>button:hover {
+        background-color: #007bb5;
+        color: black; /* Ensure text remains black on hover */
+    }
 
         /* Center-aligned title and subheader */
         .center-aligned-title {
@@ -35,10 +62,7 @@ def add_custom_css():
             font-weight: bold;
         }
 
-        .stFileUploader {
-            background-color: rgba(255, 255, 255, 0.8);
-            
-        }
+    
 
         /* Spinner styling */
         .css-1bk0rdt {
@@ -58,62 +82,27 @@ def add_custom_css():
             padding: 15px;
             border-radius: 10px;
             margin-top: 20px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
+            box-shadow: 0px 0px 10px #5DADEC;
         }
 
         .info-section h3 {
             color: #ffcc00;
         }
-
-        .stButton>button {
-        background-color: #4CAF50; /* Green */
-        color: white;
-        font-size: 16px;
-        padding: 10px 20px;
-        border-radius: 8px;
-        border: none;
-        cursor: pointer;
-        transition: 0.3s;
-    }
-    .stButton>button:hover {
-        background-color: #45a049;
-    }
-    .stDownloadButton>button {
-        background-color: #008CBA; /* Blue */
-        color: white;
-        font-size: 16px;
-        padding: 10px 20px;
-        border-radius: 8px;
-        border: none;
-        cursor: pointer;
-        transition: 0.3s;
-    }
-    .stDownloadButton>button:hover {
-        background-color: #007bb5;
-    }
-
-
         </style>
         """,
         unsafe_allow_html=True,
     )
 
-    
-
-    # Custom CSS for buttons
-
-
 
 def main():
     load_dotenv()
 
-     # Add custom CSS for styling
+    # Add custom CSS for styling
     add_custom_css()
 
-    # App Title and Subtitle (center-aligned using CSS class)
+    # App Title and Subtitle
     st.markdown('<h1 class="center-aligned-title">Invoice Extraction Bot</h1>', unsafe_allow_html=True)
     st.markdown('<h2 class="center-aligned-subheader">I can help you in extracting invoice data effortlessly.</h2>', unsafe_allow_html=True)
-
 
     uploaded_files = st.file_uploader(
         "Upload invoices here (PDFs or images allowed)", 
@@ -126,35 +115,11 @@ def main():
         if uploaded_files:
             with st.spinner("Processing..."):
                 try:
-                    # Process each file based on its type
-                    extracted_data = []
-                    for uploaded_file in uploaded_files:
-                        file_type = uploaded_file.type
+                    extracted_data = create_docs(uploaded_files)
+                    if not extracted_data.empty:
+                        st.write(extracted_data.head())
 
-                        if file_type == "application/pdf":
-                            logger.info(f"Processing PDF file: {uploaded_file.name}")
-                            data = create_docs([uploaded_file])  # Expect a DataFrame
-                        elif file_type in ["image/jpeg", "image/png"]:
-                            logger.info(f"Processing image file: {uploaded_file.name}")
-                            data_dict = process_image(uploaded_file)  # Expect a dict
-                            if data_dict:
-                                data = pd.DataFrame([data_dict])  # Convert dict to DataFrame
-                            else:
-                                data = None
-                        else:
-                            logger.warning(f"Unsupported file type: {uploaded_file.name} ({file_type})")
-                            st.warning(f"Unsupported file type: {uploaded_file.name}. Skipping...")
-                            continue
-
-                        if data is not None:
-                            extracted_data.append(data)
-
-                    # Combine and display extracted data
-                    if extracted_data:
-                        combined_data = pd.concat(extracted_data, ignore_index=True)
-                        st.write(combined_data.head())
-
-                        data_as_csv = combined_data.to_csv(index=False).encode("utf-8")
+                        data_as_csv = extracted_data.to_csv(index=False).encode("utf-8")
                         st.download_button(
                             "Download data as CSV",
                             data_as_csv,
@@ -165,7 +130,6 @@ def main():
                         st.success("Data extraction complete!")
                     else:
                         st.warning("No data extracted from the uploaded files.")
-
                 except Exception as e:
                     logger.error(f"Error during data extraction: {str(e)}", exc_info=True)
                     st.error(f"Error during extraction: {str(e)}")
