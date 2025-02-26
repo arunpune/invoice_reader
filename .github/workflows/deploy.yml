@@ -1,0 +1,29 @@
+name: Streamlit GitOps Deployment
+
+on:
+  push:
+    branches:
+      - main  # Runs when changes are pushed to main
+  pull_request:
+    branches:
+      - main  # Runs checks on PRs before merging
+  schedule:
+    - cron: "*/10 * * * *"  # Runs every 10 minutes to keep the app alive
+
+jobs:
+  deploy:
+    name: Deploy to Streamlit Cloud
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Notify Streamlit Cloud
+        run: echo "Changes pushed to main - Streamlit Cloud will auto-deploy."
+
+  keep_alive:
+    name: Keep Streamlit App Alive
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Streamlit App
+        run: curl -s https://invoice-data-extract.streamlit.app > /dev/null || echo "Streamlit app is down"
