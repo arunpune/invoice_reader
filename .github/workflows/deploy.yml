@@ -26,4 +26,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Ping Streamlit App
-        run: curl -s https://invoice-data-extract.streamlit.app > /dev/null || echo "Streamlit app is down"
+        run: curl -s https://invoicereader-canspirit-ai.streamlit.app > /dev/null || echo "Streamlit app is down"
