@@ -17593,3 +17593,102 @@ Note that the 'Description' field contains multiple lines, and the 'Quantity' an
 2025-03-02 17:50:37,231 - invoice_extraction_bot - DEBUG - Parsed Data Dict: {'Invoice no.': '61356291', 'Description': 'Wine Glasses Goblets Pair Clear\nGlass With Hooks Stemware Storage\nMultiple Uses Iron Wine Rack\nHanging Glass\nReplacement Corkscrew Parts\nSpiral Worm Wine Opener Bottle\nHoudini\nHOME ESSENTIALS GRADIENT\nSTEMLESS WINE GLASSES SET OF 4 20 FL OZ (591 ml) NEW', 'Quantity': '5.00\n4.00\n1.00\n1.00', 'Date': '09/06/2012', 'Unit price': '12.00\n28.08\n7.50\n12.99', 'Amount': '60.00\n112.32\n7.50\n12.99', 'Total': '212.09', 'Email': 'N/A', 'Phone number': 'N/A', 'Address': 'Chapman, Kim and Green, 64731 James Branch, Smithmouth, NC 26872\nHortonshire, MS 93248'}
 2025-03-02 17:50:37,231 - invoice_extraction_bot - INFO - Data extraction process completed.
 2025-03-02 17:50:59,881 - invoice_extraction_bot - INFO - Invoice Extraction Bot started.
+2025-03-02 18:20:28,530 - invoice_extraction_bot - INFO - Initialized Groq model.
+2025-03-02 18:20:30,696 - invoice_extraction_bot - INFO - Invoice Extraction Bot started.
+2025-03-02 18:20:43,787 - invoice_extraction_bot - INFO - Invoice Extraction Bot started.
+2025-03-02 18:20:45,722 - invoice_extraction_bot - INFO - Invoice Extraction Bot started.
+2025-03-02 18:20:45,736 - invoice_extraction_bot - INFO - Processing file: invoice_1_page-0001.jpg
+2025-03-02 18:21:00,794 - invoice_extraction_bot - DEBUG - OCR Raw Text Output:
+Invoice no: 61356291
+Date of issue:
+09/06/2012
+Seller:
+Client:
+Chapman, Kim and Green
+Rodriguez-Stevens
+64731 James Branch
+2280 Angela Plain
+Smithmouth, NC 26872
+Hortonshire, MS 93248
+Tax Id: 949-84-9105
+Tax Id: 939-98-8477
+IBAN: GBSOACIE59715038217063
+ITEMS
+No_
+Description
+Qty
+UM
+Net price
+Net worth
+VAT [%]
+Gross
+worth
+Wine Glasses Goblets Pair Clear
+5,00
+each
+12,00
+60,00
+10%
+6,00
+Glass
+With Hooks Stemware Storage
+4,00
+each
+28,08
+112,32
+10%
+123,55
+Multiple Uses Iron Wine Rack
+Hanging Glass
+Replacement Corkscrew Parts
+1,00
+each
+7,50
+7,50
+10%
+8,25
+Spiral Worm Wine Opener Bottle
+Houdini
+HOME ESSENTIALS GRADIENT
+1,00
+each
+12,99
+12,99
+10%
+14,29
+STEMLESS WINE GLASSES SET
+OF 4 20 FL OZ (591 ml) NEW
+SUMMARY
+VAT [%]
+Net worth
+VAT
+Gross worth
+10%
+192,81
+19,28
+212,09
+Total
+192,81
+$ 19,28
+$ 212,09
+2025-03-02 18:21:00,796 - invoice_extraction_bot - INFO - Sending data to Groq API for extraction.
+2025-03-02 18:21:01,533 - invoice_extraction_bot - DEBUG - Groq API Response: Here is the extracted data:
+
+```
+{
+    'Invoice no.': '61356291',
+    'Description': 'Wine Glasses Goblets Pair Clear\nGlass With Hooks Stemware Storage\nMultiple Uses Iron Wine Rack\nHanging Glass\nReplacement Corkscrew Parts\nSpiral Worm Wine Opener Bottle\nHoudini\nHOME ESSENTIALS GRADIENT\nSTEMLESS WINE GLASSES SET OF 4 20 FL OZ (591 ml) NEW',
+    'Quantity': '5.00\n4.00\n1.00\n1.00',
+    'Date': '09/06/2012',
+    'Unit price': '12.00\n28.08\n7.50\n12.99',
+    'Amount': '60.00\n112.32\n7.50\n12.99',
+    'Total': '212.09',
+    'Email': 'N/A',
+    'Phone number': 'N/A',
+    'Address': 'Chapman, Kim and Green, 64731 James Branch, Smithmouth, NC 26872\nHortonshire, MS 93248'
+}
+```
+
+Note that the 'Description' field contains multiple lines, and the 'Quantity' and 'Unit price' fields contain multiple values separated by newline characters. The 'Amount' field contains the sum of the unit prices and quantities. The 'Email', 'Phone number', and 'Address' fields are missing, so they are set to 'N/A'.
+2025-03-02 18:21:01,533 - invoice_extraction_bot - DEBUG - Parsed Data Dict: {'Invoice no.': '61356291', 'Description': 'Wine Glasses Goblets Pair Clear\nGlass With Hooks Stemware Storage\nMultiple Uses Iron Wine Rack\nHanging Glass\nReplacement Corkscrew Parts\nSpiral Worm Wine Opener Bottle\nHoudini\nHOME ESSENTIALS GRADIENT\nSTEMLESS WINE GLASSES SET OF 4 20 FL OZ (591 ml) NEW', 'Quantity': '5.00\n4.00\n1.00\n1.00', 'Date': '09/06/2012', 'Unit price': '12.00\n28.08\n7.50\n12.99', 'Amount': '60.00\n112.32\n7.50\n12.99', 'Total': '212.09', 'Email': 'N/A', 'Phone number': 'N/A', 'Address': 'Chapman, Kim and Green, 64731 James Branch, Smithmouth, NC 26872\nHortonshire, MS 93248'}
+2025-03-02 18:21:01,549 - invoice_extraction_bot - INFO - Data extraction process completed.

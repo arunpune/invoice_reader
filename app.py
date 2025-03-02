@@ -4,6 +4,17 @@ from logging_config import logger
 from backend import create_docs
 import pandas as pd
 
+
+# start Arun hide github on streamlit
+
+hide_github = """
+    <style>
+    .stDeployButton {display: none !important;}
+    </style>
+"""
+st.markdown(hide_github, unsafe_allow_html=True)
+# end Arun hide github on streamlit
+
 # Set the page configuration
 st.set_page_config(page_title="Invoice Extraction Bot", layout="wide")
 
