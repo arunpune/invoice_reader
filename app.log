@@ -17692,3 +17692,6 @@ $ 212,09
 Note that the 'Description' field contains multiple lines, and the 'Quantity' and 'Unit price' fields contain multiple values separated by newline characters. The 'Amount' field contains the sum of the unit prices and quantities. The 'Email', 'Phone number', and 'Address' fields are missing, so they are set to 'N/A'.
 2025-03-02 18:21:01,533 - invoice_extraction_bot - DEBUG - Parsed Data Dict: {'Invoice no.': '61356291', 'Description': 'Wine Glasses Goblets Pair Clear\nGlass With Hooks Stemware Storage\nMultiple Uses Iron Wine Rack\nHanging Glass\nReplacement Corkscrew Parts\nSpiral Worm Wine Opener Bottle\nHoudini\nHOME ESSENTIALS GRADIENT\nSTEMLESS WINE GLASSES SET OF 4 20 FL OZ (591 ml) NEW', 'Quantity': '5.00\n4.00\n1.00\n1.00', 'Date': '09/06/2012', 'Unit price': '12.00\n28.08\n7.50\n12.99', 'Amount': '60.00\n112.32\n7.50\n12.99', 'Total': '212.09', 'Email': 'N/A', 'Phone number': 'N/A', 'Address': 'Chapman, Kim and Green, 64731 James Branch, Smithmouth, NC 26872\nHortonshire, MS 93248'}
 2025-03-02 18:21:01,549 - invoice_extraction_bot - INFO - Data extraction process completed.
+2025-03-02 19:40:14,022 - invoice_extraction_bot - INFO - Initialized Groq model.
+2025-03-02 19:44:39,847 - invoice_extraction_bot - INFO - Initialized Groq model.
+2025-03-02 19:44:43,341 - invoice_extraction_bot - INFO - Invoice Extraction Bot started.
